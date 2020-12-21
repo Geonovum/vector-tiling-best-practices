@@ -73,3 +73,11 @@ Het aantal vector tile bronnen, lagen en de complexiteit van de features dragen 
 Om een kaart sneller te maken kun je het aantal lagen, bronnen en de complexiteit van de feautres verminderen.
 
 Meer tips zie: https://docs.mapbox.com/help/troubleshooting/mapbox-gl-js-performance/
+
+
+## Aanbeveling: afmetingen van de tile / high resolution tiles
+Vector tiles bevatten informatie over de gebruikte coordinatenruimte, standaard 4096 volgens [[Mapbox-Vector-Tile-Specification]]. Dit betekent dat de ruimtelijke coordinaten omgerekend worden naar een intern systeem o.b.v. 4096 coordinaten breed en hoog.
+
+De meeste vector tiles worden gemaakt voor gebruik in een client van 512 bij 512 pixels.
+
+TODO: check van werkgroepleden voor een goede formulering
