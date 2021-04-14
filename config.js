@@ -52,9 +52,8 @@ var respecConfig =
   authors:
   [
     {
-      name:       "Werkgroep leden noemen?",
-      company:    "Per organisatie",
-      companyURL: "https://example.com"
+      name:       "Diverse werkgroepleden (zie Github)",
+      company:    "Diverse organisaties"
     },
   ],
   //-- shortName is verplicht! (komt in de URL: kies logische naam) --------------------
