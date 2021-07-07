@@ -47,7 +47,7 @@ Tegels zo klein en clean mogelijk houden draagt bij aan de snelheid van het binn
 
 Wat kan je doen?
 
-*   Goed Pre-processing
+*   Goede pre-processing
 *   Juiste configuratie data lagen in de tegel set
 *   Optimale styling en bronnen binnen halen (zie A.3.2 uit Praktijkrichtlijn Vector Tiles)
 
@@ -83,9 +83,18 @@ Houdt ook rekening met bepaalde tussenpunten i.r.t. CRS.
 *   Een geometrie soort per data laag gebruiken
 
 
+
+### Aanbeveling: platte index
+Bij tiling wordt normaal gesproken bij 1 niveau verder inzoomen een vector tile opgeknipt in 4 nieuwe vector tiles (een zogenaamde _platte index_ / _flat index_). Het kan nuttig zijn om vanwege datadichtheid dit niet te doen, maar slimmer om te gaan met bijna lege vector tiles (niet meer opknippen). Ook het overslaan van zoomniveaus wordt wel eens toegepast. Beide methodes vragen om een slimmere index, waarmee duidelijk is bij welke stappen wel of juist geen nieuwe tile opgevraagd moet worden. Een dergelijke slimme index is voor clients lastiger om te gebruiken. De Prakrijktrichtlijn schrijft daarom alleen een platte index voor.
+
+<div class="advisement">
+_AANBEVELING_ Gebruik een platte / "flat" index als indeling voor vector tiles.
+</div>
+
+
 ### Aanbeveling: tile bestandsgrootte
 <div class="informative">
-_Aanbeveling_ Beperk de bestandsgrootte van een tegel, in omvang en hoeveelheid geometrie.bijvoorbeeld 500kb of 100.000 features
+_AANBEVELING_ Beperk de bestandsgrootte van een tegel, in omvang en hoeveelheid geometrie.bijvoorbeeld 500kb of 100.000 features
 </div>
 
 Sommige tooling bied mogelijkheden tot het configureren van simplificatie bij de generatie van vecotr tiles. Bijvoorbeeld:
