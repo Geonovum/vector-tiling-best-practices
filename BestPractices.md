@@ -33,9 +33,9 @@ Een aantal redenen om vector tiles te gebruiken:
   * Door minder data meer efficiënt gebruik van caches.
 
 Redenen om geen vector tiles te gebruiken:
-*   de brongegevens zijn rasterdata (foto's, DTMs, andere data-rasters)
-*   er worden primitieve clients gebruikt die geen vector data kunnen renderen
-*   voor lagere zoomlevels zijn veel resources nodig om te genereren, andere opties kunnen daar efficiënter zijn
+*   de brongegevens zijn rasterdata (foto's, DTMs, andere data-rasters).
+*   er worden primitieve clients gebruikt die geen vector data kunnen renderen.
+*   voor lagere zoomlevels zijn veel resources nodig om te genereren, andere opties kunnen daar efficiënter zijn.
 
 ## Aanbeveling: Optimalisatie tegel set
 
@@ -55,14 +55,14 @@ Door Simplificatie zo veel mogelijk in de voorbewerking van de data doen, houd j
 
 Simplificatie kan op meerdere manieren behaald worden:
 
-* detailnvieau vectoren overeen laten komen met het grid van de tegel of mogelijk iets grover (over het algemeen 4096 x 4096)  
+* detailnvieau vectoren overeen laten komen met het grid van de tegel of mogelijk iets grover (over het algemeen 4096 x 4096).
 * de vertices van de geometrien te beperken en te verminderen.
 * Geometrien daadwerkelijk versimpelen tot een simpelere vorm.
 * Aggregeren van data tot een grover niveau. Bijvoorbeeld aggregeren van pand naar blok of buurt niveau.
 * per zoomlevel (of per groep zoomlevels) geometrieen versimpelen 
 * een eenvoudiger geometrietype kiezen waar toepasbaar, bijvoorbeeld een lijn in plaats van een poygoon. 
-*   Verwijderen van snippets en heel kleine polygonen
-*   attributen klein houden door juiste datatype te kiezen; bijvoorbeeld: minder decimalen achter de komma in de attribuut data of
+*   Verwijderen van snippets en heel kleine polygonen.
+*   attributen klein houden door juiste datatype te kiezen; bijvoorbeeld: minder decimalen achter de komma in de attribuut data.
 
 Hierbij is het belangrijk te realiseren dat vectortiles zijn geoptimaliseerd voor visualisatie. De orginele geometrieen
 (de brondata) dienen op een andere manier verstrekt te worden.
@@ -84,7 +84,7 @@ Bij het configureren van tegels op basis van geodata kunnen de volgende principe
 * Minder data op de lagere zoom niveaus laten zien. (aggregatie laten zien op lager zoom niveau)
 *   Data op bepaalde zoom niveaus niet aanleveren.
 *   Beperkt overzooming toepassen clientside, zodat de hoogste zoom niveaus geen tegels gerenderd hoeven worden.
-*   Attribuut data beperken tot minimale vereiste voor de toepassing (niet gebruiken om alle data te laten zien die je in huis hebt)
+*   Attribuut data beperken tot minimale vereiste voor de toepassing (niet gebruiken om alle data te laten zien die je in huis hebt).
 
 ### Aanbeveling: platte index
 Bij tiling wordt normaal gesproken bij 1 niveau verder inzoomen een vector tile opgeknipt in 4 nieuwe vector tiles (een zogenaamde _platte index_ / _flat index_). Het kan nuttig zijn om vanwege datadichtheid dit niet te doen, maar slimmer om te gaan met bijna lege vector tiles (niet meer opknippen). Ook het overslaan van zoomniveaus wordt wel eens toegepast. Beide methodes vragen om een slimmere index, waarmee duidelijk is bij welke stappen wel of juist geen nieuwe tile opgevraagd moet worden. Een dergelijke slimme index is voor clients lastiger om te gebruiken. De Prakrijktrichtlijn schrijft daarom alleen een platte index voor.
