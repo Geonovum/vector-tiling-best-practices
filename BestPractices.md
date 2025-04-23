@@ -55,7 +55,7 @@ Door Simplificatie zo veel mogelijk in de voorbewerking van de data doen, houd j
 
 Simplificatie kan op meerdere manieren behaald worden:
 
-* detailnvieau vectoren laten matchen met het grid van de tegel of mogelijk iets grover (over het algemeen 4096 x 4096)  
+* detailnvieau vectoren overeen laten komen met het grid van de tegel of mogelijk iets grover (over het algemeen 4096 x 4096)  
 * de vertices van de geometrien te beperken en te verminderen.
 * Geometrien daadwerkelijk versimpelen tot een simpelere vorm.
 * Aggregeren van data tot een grover niveau. Bijvoorbeeld aggregeren van pand naar blok of buurt niveau.
@@ -96,7 +96,10 @@ _AANBEVELING_ Gebruik een platte / "flat" index als indeling voor vector tiles.
 
 ### Aanbeveling: tile bestandsgrootte
 
-Zie ook de praktijk richtlijn vectortiles. Het is mogelijk om eindeloos veel vectoren in een tegel op te nemen, met te hoog detailniveau. Hierbij kan de grootte van een vectortile ook eindeloos groot zijn. Hierom is extra aandacht nodig voor het beperken van de grootte van de tiles.  
+Zie ook de praktijk richtlijn vectortiles.
+Het is mogelijk om eindeloos veel vectoren in een tegel op te nemen, met te hoog detailniveau.
+Hierbij kan de grootte van een vectortile ook eindeloos groot zijn.
+Hierom is extra aandacht nodig voor het beperken van de grootte van de tiles.  
 
 Sommige tooling bied mogelijkheden tot het configureren van simplificatie bij de generatie van vecotr tiles. Bijvoorbeeld:
 *   weglaten van de kleinste polygonen
@@ -107,18 +110,17 @@ Door de simplificatie aan de tooling over te laten krijg je makkelijker en snel 
 
 ## Aanbeveling: Clipping & buffering
 
-Veel tiling engines bieden de mogelijkheid om vectoren te clippen op de tegelrand. Daarbij wordt tevens een buffer toegpast
-om styling van vectoren uit aangrenzende tegels vloeiend door te laten lopen. Als je dit niet doet worden de tegels groter 
-dan noodzakelijk.
+Veel tiling engines bieden de mogelijkheid om vectoren af te snijden op de tegelrand.
+Daarbij wordt tevens een marge toegpast om styling van vectoren uit aangrenzende tegels vloeiend door te laten lopen.
+Als je dit niet doet worden de tegels groter dan noodzakelijk.
 
 <div class="informative">
-_AANBEVELING_ Maak waar mogelijk gebruik clipping van geometrieen, waarbij rekening gehoud met een buffer die 
-groot genoeg is voor de toegepaste styling.  
+_AANBEVELING_ Snij waar mogelijk de geometrieen af (clipping), waarbij rekening wordt gehouden met een marge die groot genoeg is voor de toegepaste styling.  
 </div>
 
 ## Aanbeveling: Optimalisatie Styling en bron bevraging
 
-Het aantal vectortile bronnen, lagen en de complexiteit van de features dragen allemaal bij aan de rendering tijd van de kaart.
+Het aantal vectortile bronnen, lagen en de complexiteit van de features dragen allemaal bij aan de verwerkingstijd die het kost om de kaart te tonen.
 
 Om een kaart sneller te maken kun je het aantal lagen, bronnen en de complexiteit van de feautres verminderen.
 
@@ -134,4 +136,5 @@ De meeste vector tiles worden gemaakt voor gebruik in een client van 256 bij 256
 
 ## Aanbeveling: Fonts
 
-Verstrek lettertypen (fonts) zowel in Mapbox- als Webfont-formaat. Niet alle clients implementeren het Mapbox formaat. 
+Verstrek lettertypen (fonts) zowel in Mapbox- als Webfont-formaat.
+Niet alle clients implementeren het Mapbox formaat. 
