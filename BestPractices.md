@@ -2,10 +2,10 @@
 
 ## Wanneer vector tiles?
 
-Welke afwegingen maak je bij het kiezen voor vector tiles of een andere oplossing? Sommige van de hieronder genoemde 
-redenen om vector tiles te gebruiken, gelden ook voor andere vector data zoals WFS of geojson. WFS en geojson hebben 
-echter als belangrijk nadeel dat ze traag of omvangrijk kunnen zijn, wat kan leiden tot problemen met datatransport 
-en geheugen. Het gebruik van tiles voor vector data lost deze problemen grotendeels op.
+Welke afwegingen maak je bij het kiezen voor vector tiles of een andere oplossing?
+Sommige van de hieronder genoemde redenen om vector tiles te gebruiken, gelden ook voor andere vector data zoals WFS of GeoJSON.
+WFS en geojson hebben echter als belangrijk nadeel dat ze traag of omvangrijk kunnen zijn, wat kan leiden tot problemen met datatransport en geheugen.
+Het gebruik van tiles voor vector data lost deze problemen grotendeels op.
 
 Een aantal redenen om vector tiles te gebruiken:
 
