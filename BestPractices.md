@@ -4,7 +4,7 @@
 
 Welke afwegingen maak je bij het kiezen voor vector tiles of een andere oplossing?
 Sommige van de hieronder genoemde redenen om vector tiles te gebruiken, gelden ook voor andere vector data zoals WFS of GeoJSON.
-WFS en geojson hebben echter als belangrijk nadeel dat ze traag of omvangrijk kunnen zijn, wat kan leiden tot problemen met datatransport en geheugen.
+WFS en GeoJSON hebben echter als belangrijk nadeel dat ze traag of omvangrijk kunnen zijn, wat kan leiden tot problemen met datatransport en geheugen.
 Het gebruik van tiles voor vector data lost deze problemen grotendeels op.
 
 Een aantal redenen om vector tiles te gebruiken:
@@ -56,16 +56,15 @@ Door Simplificatie zo veel mogelijk in de voorbewerking van de data doen, houd j
 Simplificatie kan op meerdere manieren behaald worden:
 
 * detailnvieau vectoren overeen laten komen met het grid van de tegel of mogelijk iets grover (over het algemeen 4096 x 4096).
-* de vertices van de geometrien te beperken en te verminderen.
-* Geometrien daadwerkelijk versimpelen tot een simpelere vorm.
+* de vertices van de geometrieën te beperken en te verminderen.
+* Geometrieën daadwerkelijk versimpelen tot een simpelere vorm.
 * Aggregeren van data tot een grover niveau. Bijvoorbeeld aggregeren van pand naar blok of buurt niveau.
-* per zoomlevel (of per groep zoomlevels) geometrieen versimpelen 
-* een eenvoudiger geometrietype kiezen waar toepasbaar, bijvoorbeeld een lijn in plaats van een poygoon. 
+* per zoomlevel (of per groep zoomlevels) geometrieën versimpelen 
+* een eenvoudiger geometrietype kiezen waar toepasbaar, bijvoorbeeld een lijn in plaats van een polygoon. 
 *   Verwijderen van snippets en heel kleine polygonen.
 *   attributen klein houden door juiste datatype te kiezen; bijvoorbeeld: minder decimalen achter de komma in de attribuut data.
 
-Hierbij is het belangrijk te realiseren dat vectortiles zijn geoptimaliseerd voor visualisatie. De orginele geometrieen
-(de brondata) dienen op een andere manier verstrekt te worden.
+Hierbij is het belangrijk te realiseren dat vectortiles zijn geoptimaliseerd voor visualisatie. De orginele geometrieën (de brondata) dienen op een andere manier verstrekt te worden.
 
 Daarnaast zijn andere bewerkingen relevant: 
 * Valide geometrieën maken (geen self-intersecting). Een vector in een vector tile is niet hetzelfde als een geometrie, dus zelfs met valide geometrieën kunnen nog steeds artefacten optreden.
@@ -96,7 +95,7 @@ _AANBEVELING_ Gebruik een platte / "flat" index als indeling voor vector tiles.
 
 ### Aanbeveling: tile bestandsgrootte
 
-Zie ook de praktijk richtlijn vectortiles.
+Zie ook de praktijkrichtlijn vectortiles.
 Het is mogelijk om eindeloos veel vectoren in een tegel op te nemen, met te hoog detailniveau.
 Hierbij kan de grootte van een vectortile ook eindeloos groot zijn.
 Hierom is extra aandacht nodig voor het beperken van de grootte van de tiles.  
@@ -115,7 +114,7 @@ Daarbij wordt tevens een marge toegpast om styling van vectoren uit aangrenzende
 Als je dit niet doet worden de tegels groter dan noodzakelijk.
 
 <div class="informative">
-_AANBEVELING_ Snij waar mogelijk de geometrieen af (clipping), waarbij rekening wordt gehouden met een marge die groot genoeg is voor de toegepaste styling.  
+_AANBEVELING_ Snij waar mogelijk de geometrieen af (clipping), waarbij rekening wordt gehouden met een marge die groot genoeg is voor de toegepaste styling.
 </div>
 
 ## Aanbeveling: Optimalisatie Styling en bron bevraging
